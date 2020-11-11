@@ -13,7 +13,7 @@ const getTemplate = (item) => {
       </div>
       <div class="product_photo">
         <a href="#" class="url--link product__link">
-          <img
+          <img width = 220
             src="${item.primaryImageUrl}"
           />
         </a>
