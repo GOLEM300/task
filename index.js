@@ -46,7 +46,7 @@ const getTemplate = (item) => {
           >По карте<br />клуба</span
         >
         <span class="goldPrice" data-change_gold="${item.productId}">${
-    item.priceGoldAlt.toFixed()
+    item.priceGoldAlt.toFixed(2)
   }</span>
         <span class="rouble__i black__i">
           <svg
@@ -70,7 +70,7 @@ const getTemplate = (item) => {
       </p>
       <p class="product_price_default">
         <span class="retailPrice" data-change_retail="${item.productId}">${
-    item.priceRetailAlt.toFixed()
+    item.priceRetailAlt.toFixed(2)
   }</span>
         <span class="rouble__i black__i">
           <svg
@@ -184,15 +184,15 @@ async function loadProducts() {
       case "metres":
         document.querySelector(`[data-change_active-metres="${id}"]`).closest("div").classList.add("unit--active")
         document.querySelector(`[data-change_active-pack="${id}"]`).closest("div").classList.remove("unit--active")
-        document.querySelector(`[data-change_retail="${id}"]`).innerHTML = data[index].priceRetailAlt.toFixed();
-        document.querySelector(`[data-change_gold="${id}"]`).innerHTML = data[index].priceGoldAlt.toFixed();
+        document.querySelector(`[data-change_retail="${id}"]`).innerHTML = data[index].priceRetailAlt.toFixed(2);
+        document.querySelector(`[data-change_gold="${id}"]`).innerHTML = data[index].priceGoldAlt.toFixed(2);
         break;
 
       case "pack":
         document.querySelector(`[data-change_active-pack="${id}"]`).closest("div").classList.add("unit--active")
         document.querySelector(`[data-change_active-metres="${id}"]`).closest("div").classList.remove("unit--active")
-        document.querySelector(`[data-change_retail="${id}"]`).innerHTML = data[index].priceRetail.toFixed();
-        document.querySelector(`[data-change_gold="${id}"]`).innerHTML = data[index].priceGold.toFixed();
+        document.querySelector(`[data-change_retail="${id}"]`).innerHTML = data[index].priceRetail.toFixed(2);
+        document.querySelector(`[data-change_gold="${id}"]`).innerHTML = data[index].priceGold.toFixed(2);
         break;
 
       case "buy":
